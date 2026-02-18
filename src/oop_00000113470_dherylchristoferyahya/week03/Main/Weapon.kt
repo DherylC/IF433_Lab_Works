@@ -1,4 +1,4 @@
-package oop_00000113470_dherylchristoferyahya.week03
+package oop_00000113470_dherylchristoferyahya.week03.Main
 
 class Weapon(val name: String) {
     var damage: Int = 0
