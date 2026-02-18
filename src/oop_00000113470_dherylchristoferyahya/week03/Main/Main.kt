@@ -11,4 +11,13 @@ fun main() {
     println("Weapon: ${myWeapon.name}")
     println("Damage: ${myWeapon.damage}")
     println("Tier: ${myWeapon.tier}")
+
+    println("\n--- Simulasi ---")
+    val p = Player("Johnjakarta")
+    p.addXp(50)
+    println("Current Level: ${p.level}")
+
+    p.addXp(60)
+    println("Current Level: ${p.level}")
+
 }
