@@ -1,7 +1,5 @@
 package oop_00000113470_dherylchristoferyahya.week03
 
-import kotlin.times
-
 class Employee(val name: String) {
     var salary: Int = 0
         set(value) {
