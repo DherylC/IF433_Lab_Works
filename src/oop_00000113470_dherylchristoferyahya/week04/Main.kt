@@ -12,5 +12,12 @@ class Main {
         myCar.openTrunk()
         myCar.honk()
         myCar.accelerate()
+
+        println("\n---Testing Electric Car (ev)---")
+        val ev = ElectricCar(brand = "Mobil Butut tapi bisa di cas", numberOfDoors = 4, batteryCapacity = 19000000)
+
+        ev.accelerate()
+        ev.honk()
+        ev.openTrunk()
     }
 }
