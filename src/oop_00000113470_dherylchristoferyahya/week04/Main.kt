@@ -19,5 +19,15 @@ class Main {
         ev.accelerate()
         ev.honk()
         ev.openTrunk()
+
+        val manager = Manager("Budi", 10000000)
+        println("--- Manager ---")
+        manager.work()
+        println("Bonus Manager: Rp ${manager.calculateBonus()}")
+
+        val developer = Developer("Andi", 8000000, "C")
+        println("--- DATA DEVELOPER ---")
+        developer.work()
+        println("Bonus Developer: Rp ${developer.calculateBonus()}")
     }
 }
