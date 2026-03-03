@@ -9,7 +9,17 @@ fun main() {
     println("Result:")
 
     for (metode in daftarPembayaran) {
+        println("Mencoba transaksi untuk: ${metode.accountName}")
         metode.processPayment(75000.0)
-        println("-----------")
+
+        if (metode is EWallet) {
+            println(">> Mendeteksi E-Wallet. Melakukan emergency top-up...")
+
+            metode.topUp(50000.0)
+
+            println(">> Mencoba pembayaran ulang setelah top-up:")
+            metode.processPayment(75000.0)
+        }
+        println("-------------------------------------------")
     }
 }
