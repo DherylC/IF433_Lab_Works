@@ -1,4 +1,4 @@
-package oop_00000113470_dherylchristoferyahya.week07.poin
+package oop_00000113470_dherylchristoferyahya.week07
 
 enum class ItemRarity(val dropChance: Int) {
     COMMON(70),
