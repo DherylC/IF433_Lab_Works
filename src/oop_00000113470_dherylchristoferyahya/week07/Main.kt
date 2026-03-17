@@ -38,10 +38,26 @@ fun main() {
     println("Peluang mendapatkan item LEGENDARY adalah: ${ItemRarity.LEGENDARY.dropChance}%")
 
     println("=== STARTER WEAPON ===")
-    val starterWeapon = Weapon.forgeStarterSword()
+    val starterWpn = Weapon.forgeStarterSword()
 
-    println("Senjata Diterima: ${starterWeapon.item.name}")
-    println("Rarity: ${starterWeapon.item.rarity}")
-    println("Damage: ${starterWeapon.item.damage}")
-    println("Durability Awal: ${starterWeapon.durability}")
+    println("Senjata Diterima: ${starterWpn.item.name}")
+    println("Rarity: ${starterWpn.item.rarity}")
+    println("Damage: ${starterWpn.item.damage}")
+    println("Durability Awal: ${starterWpn.durability}")
+
+    println("=== BLACKSMITH UPGRADE ===")
+    val starterWeapon = Weapon.forgeStarterSword()
+    println("Senjata Awal: ${starterWeapon.item.name} (Damage: ${starterWeapon.item.damage})")
+
+   val upgradedItem = starterWeapon.item.copy(
+        name = "Pedang Kayu Tajam +1",
+        damage = 25
+    )
+    println("Hasil Upgrade: ${upgradedItem.name} (Damage: ${upgradedItem.damage})")
+
+    println("=== FINAL ===")
+    processEvent(SafeZone)
+    processEvent(MonsterEncounter("Goblin Nakal"))
+    processEvent(LootDropped(upgradedItem))
+    processEvent(GameOver("Terkena jebakan racun"))
 }
