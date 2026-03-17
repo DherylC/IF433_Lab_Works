@@ -9,7 +9,7 @@ fun main() {
     val client = NetworkClient.createClient()
     client.connect()
 
-    println("=== TETS REGULAR CLASS ===")
+    println("=== TEST REGULAR CLASS ===")
     val data1 = DataUser("Alice", 22)
     val data2 = DataUser("Alice", 22)
     println(data1)
@@ -20,4 +20,11 @@ fun main() {
 
     val (userName, userAge) = data1
     println("Destructured: $userName berumur $userAge")
+
+    println("=== TEST SEALED CLASS ===")
+    val res: ApiResponse = ApiResponse.Success("Data berhasil ditarik!")
+    val uiMessage = when(res){
+        is ApiResponse.Success -> "tampilkan: ${res.data}"
+        is ApiResponse.Error -> "Munculkan alert: ${res.message}"
+    }
 }
