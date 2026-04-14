@@ -11,6 +11,8 @@ fun main(){
     println("mhs2: ${mhs2.address.kota}")
 
     val tetapAlamat = Alamat(null)
-    val defaultAlamat = tetapAlamat.kota?:"Cihuni"
-    println("Alamat kamu: ${tetapAlamat.kota}")
+    val defaultAlamat = tetapAlamat.kota?.let {
+        adrs ->"alamat adalah $adrs"
+    } ?: "Alamat kosong"
+    println("Alamat kamu: ${defaultAlamat}")
 }
