@@ -34,6 +34,14 @@ fun main(){
     val someObject: Any = 100
     val safeString = someObject as? String ?: "Unknown string"
     println("Hasil cast + fallback: ${safeString}")
+
+    println("\n=== TEST THE RED BTN ===")
+    val toxicData: String? = null
+    try {
+        val length = toxicData!!.length
+    } catch (e: NullPointerException) {
+        println("sembarangan amat")
+    }
 }
 
 
