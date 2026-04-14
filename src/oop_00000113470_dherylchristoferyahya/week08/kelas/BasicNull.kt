@@ -1,7 +1,12 @@
 package oop_00000113470_dherylchristoferyahya.week08.kelas
 
-class profilepage(
-    val idprofile: String,
-    val statusOnline: String,
-) {
+class Alamat(val kota: String?)
+class Mahasiswa(val address: Alamat)
+
+fun main(){
+   val mhs1 = Mahasiswa(Alamat("Jakarta"))
+   val mhs2 = Mahasiswa(Alamat(null))
+
+    println("mhs1: ${mhs1.address.kota}")
+    println("mhs2: ${mhs2.address.kota}")
 }

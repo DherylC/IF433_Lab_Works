@@ -1,4 +1,4 @@
-package oop_00000113470_dherylchristoferyahya.week08.kelas
+package oop_00000113470_dherylchristoferyahya.week08
 
 class UserProfile(
     val name: String,
