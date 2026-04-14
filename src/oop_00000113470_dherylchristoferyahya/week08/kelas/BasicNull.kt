@@ -9,4 +9,8 @@ fun main(){
 
     println("mhs1: ${mhs1.address.kota}")
     println("mhs2: ${mhs2.address.kota}")
+
+    val tetapAlamat = Alamat(null)
+    val defaultAlamat = tetapAlamat.kota?:"Cihuni"
+    println("Alamat kamu: ${tetapAlamat.kota}")
 }
