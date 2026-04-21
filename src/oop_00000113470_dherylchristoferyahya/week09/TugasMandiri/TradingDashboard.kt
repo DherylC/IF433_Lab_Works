@@ -24,5 +24,10 @@ fun main() {
     println("Jumlah transaksi tertutup: ${closedTrades.size}")
     closedTrades.forEach { println(it) }
 
+    val winningTrades = closedTrades.filter { it.roe > 0 }
+
+    println("Jumlah transaksi menang: ${winningTrades.size}")
+    winningTrades.forEach { println(it) }
+
     println("==========================================================")
 }
