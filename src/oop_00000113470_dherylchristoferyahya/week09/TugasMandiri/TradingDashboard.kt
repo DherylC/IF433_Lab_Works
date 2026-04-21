@@ -57,5 +57,13 @@ fun main() {
         println(it)
     }
 
+    println("\n--- DAFTAR LOSS ---")
+    worstPerformersString.forEach {
+        println(it)
+    }
+
+    println("\n--- KOIN YANG DITRADINGKAN ---")
+    println(uniquePairs)
+
     println("==========================================================")
 }
