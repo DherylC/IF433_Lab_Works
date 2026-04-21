@@ -53,5 +53,9 @@ fun main() {
 
     println("Pasangan koin yang pernah ditradingkan: $uniquePairs")
 
+    topPerformersString.forEach {
+        println(it)
+    }
+
     println("==========================================================")
 }
