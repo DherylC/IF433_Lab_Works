@@ -47,5 +47,11 @@ fun main() {
     println("Daftar Performa Terburuk:")
     worstPerformersString.forEach { println(it) }
 
+    val uniquePairs = tradeHistory
+        .map { it.pair }
+        .toSet()
+
+    println("Pasangan koin yang pernah ditradingkan: $uniquePairs")
+
     println("==========================================================")
 }
