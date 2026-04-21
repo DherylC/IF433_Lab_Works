@@ -19,5 +19,10 @@ fun main() {
         println("${trade.pair.padEnd(8)} | ${trade.position.padEnd(5)} | Leverage: ${trade.leverage}x | ROE: ${trade.roe}% | Status: ${trade.status} ($profitOrLoss)")
     }
 
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
+
+    println("Jumlah transaksi tertutup: ${closedTrades.size}")
+    closedTrades.forEach { println(it) }
+
     println("==========================================================")
 }
