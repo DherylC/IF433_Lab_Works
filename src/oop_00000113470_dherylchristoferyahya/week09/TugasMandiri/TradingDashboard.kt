@@ -26,8 +26,13 @@ fun main() {
 
     val winningTrades = closedTrades.filter { it.roe > 0 }
 
-    println("Jumlah transaksi menang: ${winningTrades.size}")
+    println("Jumlah transaksi untung: ${winningTrades.size}")
     winningTrades.forEach { println(it) }
+
+    val losingTrades = closedTrades.filter { it.roe <= 0 }
+
+    println("Jumlah transaksi rugi: ${losingTrades.size}")
+    losingTrades.forEach { println(it) }
 
     println("==========================================================")
 }
