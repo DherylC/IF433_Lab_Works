@@ -7,4 +7,8 @@ fun main(){
 
     println("Isi intBox: ${intBox.value}")
     println("Isi stringBox: ${stringBox.value}")
+
+    println("\n=== TEST GENERIC CLASS ===")
+    val itemPrice = PairBox("Bitcoin", 100)
+    println("Aset: ${itemPrice.key}, Harga: ${itemPrice.value}")
 }
