@@ -25,4 +25,5 @@ fun main() {
     txRepo.getAll().forEach { tx ->
         println("- ID: ${tx.id}, Jumlah: ${tx.amount}")
     }
+
 }
