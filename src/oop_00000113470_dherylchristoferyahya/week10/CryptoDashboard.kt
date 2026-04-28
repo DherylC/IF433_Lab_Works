@@ -3,9 +3,9 @@ package oop_00000113470_dherylchristoferyahya.week10
 fun main() {
     val coinRepo = WalletRepository<Coin>()
 
-    coinRepo.add(Coin("Bitcoin", 0.05))
-    coinRepo.add(Coin("Ethereum", 2.0))
-    coinRepo.add(Coin("Solana", 15.0))
+    coinRepo.add(Coin("BTC", 0.05))
+    coinRepo.add(Coin("ETH", 2.5))
+    coinRepo.add(Coin("USDT", 2400.0))
 
     println("--- Daftar Koin ---")
     coinRepo.getAll().forEach {
