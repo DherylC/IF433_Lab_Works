@@ -10,4 +10,8 @@ class WalletRepository<T> {
     fun getAll(): List<T> {
         return items.toList()
     }
+
+    fun <T : Named> WalletRepository<T>.findByName(name: String): T? {
+        return this.getAll().find { it.name.equals(name, ignoreCase = true) }
+    }
 }
