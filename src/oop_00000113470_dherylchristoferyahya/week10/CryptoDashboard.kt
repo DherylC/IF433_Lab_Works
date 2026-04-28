@@ -7,18 +7,11 @@ fun main() {
     coinRepo.add(Coin("ETH", 2.5))
     coinRepo.add(Coin("USDT", 2400.0))
 
-    println("--- Daftar Koin ---")
-    coinRepo.getAll().forEach {
-        println("Coin: ${it.name}, Saldo: ${it.balance}")
-    }
+    val response = ApiResponse("200 OK", coinRepo.getAll())
 
-    val target = "Ethereum"
-    val found = coinRepo.findByName(target)
-
-    println("\n--- Hasil Pencarian ---")
-    if (found != null) {
-        println("Ditemukan: ${found.name} dengan saldo ${found.balance}")
-    } else {
-        println("$target tidak ditemukan di dompet.")
+    println("Status Respon: ${response.status}")
+    println("Data diterima:")
+    response.data.forEach { coin ->
+        println("- ${coin.name}: ${coin.balance}")
     }
 }
