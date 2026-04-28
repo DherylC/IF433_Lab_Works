@@ -11,4 +11,9 @@ fun main(){
     println("\n=== TEST GENERIC CLASS ===")
     val itemPrice = PairBox("Bitcoin", 100)
     println("Aset: ${itemPrice.key}, Harga: ${itemPrice.value}")
+
+    println("\n=== TEST GENERIC FUNCTIONS ===")
+    printData(3.14)
+    val result = processData("Stablecoin")
+    println("Hasil Proses: $result")
 }
