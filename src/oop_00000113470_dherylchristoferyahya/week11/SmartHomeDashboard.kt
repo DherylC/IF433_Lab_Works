@@ -27,6 +27,11 @@ fun main() {
         println("Total entitas di dashboard: $size")
     }
 
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+    println("Total beban daya seluruh perangkat: $totalPower Watt")
+
     println("\n--- Status Dashboard Smart Home ---")
     homeDevices.forEach { println(it.diagnose()) }
 }
