@@ -3,16 +3,23 @@ package oop_00000113470_dherylchristoferyahya.week11
 fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
-    SmartDevice(name = "", category = "").apply {
+    SmartDevice("", "").apply {
         name = "Philips WiZ Living Room"
         category = "Lighting"
         isOnline = true
         powerLoad = 12
     }.also {
         homeDevices.add(it)
-        println("Sistem: Perangkat '${it.name}' berhasil ditambahkan ke dashboard.")
     }
 
-    println("\nDaftar Perangkat Saat Ini:")
+    SmartDevice("Ezviz Outdoor", "Camera").apply {
+        isOnline = true
+        powerLoad = 5
+    }.also {
+        println("(LOG) Kamera terhubung")
+        homeDevices.add(it)
+    }
+
+    println("\n--- Status Dashboard Smart Home ---")
     homeDevices.forEach { println(it.diagnose()) }
 }
