@@ -3,20 +3,10 @@ package oop_00000113470_dherylchristoferyahya.week11
 fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
-    SmartDevice("", "").apply {
-        name = "Philips WiZ Living Room"
-        category = "Lighting"
-        isOnline = true
-        powerLoad = 12
-    }.also { homeDevices.add(it) }
-
-    SmartDevice("Ezviz Outdoor", "Camera").apply {
-        isOnline = true
-        powerLoad = 5
-    }.also {
-        println("(LOG) Kamera terhubung")
-        homeDevices.add(it)
-    }
+    homeDevices.add(SmartDevice("Philips WiZ Living Room", "Lighting", true, 12))
+    homeDevices.add(SmartDevice("Ezviz Outdoor", "Camera", true, 5))
+    homeDevices.add(SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800))
+    homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
 
     val acUnit = run {
         val device = SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
@@ -24,7 +14,12 @@ fun main() {
     }
     homeDevices.add(acUnit)
 
-    homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
+    val searchResult = homeDevices.find { it.category == "Camera" }
+    searchResult?.let {
+        println("\n--- Hasil Pencarian Keamanan ---")
+        val hasilDiagnose = it.diagnose()
+        println(hasilDiagnose)
+    }
 
     println("\n--- Status Dashboard Smart Home ---")
     homeDevices.forEach { println(it.diagnose()) }
