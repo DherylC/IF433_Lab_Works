@@ -21,6 +21,12 @@ fun main() {
         println(hasilDiagnose)
     }
 
+    with(homeDevices) {
+        println("\n--- Rangkuman Sistem ---")
+        println("Jumlah perangkat terdaftar: ${this.size}")
+        println("Total entitas di dashboard: $size")
+    }
+
     println("\n--- Status Dashboard Smart Home ---")
     homeDevices.forEach { println(it.diagnose()) }
 }
