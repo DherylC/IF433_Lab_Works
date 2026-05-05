@@ -8,24 +8,29 @@ fun main(){
     val text: String? = null
     println("apakah null/empty? ${text.isNullOrEmptyCustom()}")
 
-    println("=== TEST RUN FUNCTION ===")
+    println("\n=== TEST RUN FUNCTION ===")
     val result = "Kotlin".run {
         println("Memproses Kata: $this")
         length * 2
     }
     println("Hasil kalkulasi run: $result")
 
-    println("=== TEST APPLY ===")
+    println("\n=== TEST APPLY ===")
     val user = User().apply {
         name = "Alex"
         age = 25
     }
     println(user)
 
-    println("=== TEST ALSO ===")
+    println("\n=== TEST ALSO ===")
     val numbers = mutableListOf(1, 2, 3)
     numbers.also {
         println("Log sebelum ditambah: $it")
     }.add(4)
     println("setelah ditambah: $numbers")
+
+    println("\n=== TEST WITH ===")
+    with(user) {
+        println("User detail -> name: $name, Umur: $age")
+    }
 }
