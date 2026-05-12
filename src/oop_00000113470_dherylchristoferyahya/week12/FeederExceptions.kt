@@ -36,5 +36,8 @@ fun main() {
         println("Error Stok: ${e.message}")
     } catch (e: Exception) {
         println("Terjadi kesalahan tidak terduga: ${e.message}")
+    } finally {
+        // Blok ini akan selalu dijalankan baik ada exception maupun tidak
+        println("Siklus pengecekan dispenser pagi selesai.")
     }
 }
