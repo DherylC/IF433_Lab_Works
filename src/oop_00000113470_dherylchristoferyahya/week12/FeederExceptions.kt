@@ -37,7 +37,11 @@ fun main() {
     } catch (e: Exception) {
         println("Terjadi kesalahan tidak terduga: ${e.message}")
     } finally {
-        // Blok ini akan selalu dijalankan baik ada exception maupun tidak
         println("Siklus pengecekan dispenser pagi selesai.")
+    }
+
+    println("=== Jadwal Makan Pagi 2 ===")
+    val result = runCatching {
+        dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false)
     }
 }
