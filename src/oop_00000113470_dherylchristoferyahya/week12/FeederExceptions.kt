@@ -41,7 +41,10 @@ fun main() {
     }
 
     println("=== Jadwal Makan Pagi 2 ===")
-    val result = runCatching {
+    runCatching {
         dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false)
+    }.onSuccess { newStock ->
+        currentKibbleStock = newStock
+        println("Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr")
     }
 }
