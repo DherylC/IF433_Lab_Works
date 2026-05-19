@@ -66,4 +66,13 @@ fun main() {
     println("\nMenyuntikkan baris data cacat ke $filePath untuk pengujian...")
     File(filePath).appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
     println("Data cacat berhasil disuntikkan.")
+
+    println("\nMemuat ulang data transaksi dari file...")
+    val loadedData = loadTrades(filePath)
+
+    val totalPnL = loadedData.sumOf { it.pnl }
+
+    println("\n--- REKAPITULASI TRADING ---")
+    println("Total transaksi valid yang berhasil dimuat: ${loadedData.size}")
+    println("Total PnL Bersih: $totalPnL")
 }
