@@ -70,9 +70,11 @@ fun main() {
     println("\nMemuat ulang data transaksi dari file...")
     val loadedData = loadTrades(filePath)
 
-    val totalPnL = loadedData.sumOf { it.pnl }
+    println("\n--- DAFTAR TRANSAKSI VALID ---")
+    loadedData.forEach { trade ->
+        println("ID: ${trade.id} | Asset: ${trade.symbol} | Type: ${trade.type} | Margin: $${trade.margin} | PnL: $${trade.pnl}")
+    }
 
-    println("\n--- REKAPITULASI TRADING ---")
-    println("Total transaksi valid yang berhasil dimuat: ${loadedData.size}")
-    println("Total PnL Bersih: $totalPnL")
+    val totalPnL = loadedData.sumOf { it.pnl }
+    println("==== TOTAL PnL BERSIH: $totalPnL ====")
 }
