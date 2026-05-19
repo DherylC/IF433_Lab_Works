@@ -1,10 +1,9 @@
 package oop_00000113470_dherylchristoferyahya.week13
+import java.io.File
 
-class BasicFileIO {
-    fun main(){
-        println("=== TEST WRITE TEXT ===")
-        val file = File("notes.txt")
-        file.writeText("Line1: Inisialisasi sistem\n")
-        println("File berhasil dibuat dan ditulis")
-    }
+fun main(){
+    println("=== TEST WRITE TEXT ===")
+    val file = File("notes.txt")
+    file.writeText("Line1: Inisialisasi sistem\n")
+    println("File berhasil dibuat dan ditulis")
 }
