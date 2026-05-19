@@ -62,4 +62,8 @@ fun main() {
     println("Menyimpan data simulasi ke $filePath...")
     saveTrades(mockTrades, filePath)
     println("Data berhasil disimpan.")
+
+    println("\nMenyuntikkan baris data cacat ke $filePath untuk pengujian...")
+    File(filePath).appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+    println("Data cacat berhasil disuntikkan.")
 }
