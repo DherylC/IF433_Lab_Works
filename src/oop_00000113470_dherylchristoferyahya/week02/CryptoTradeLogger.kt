@@ -25,6 +25,7 @@ fun fromCsvTrade(line: String): TradeRecord? {
 
         TradeRecord(id, symbol, type, margin, pnl)
     } catch (e: Exception) {
+        println("(Log) Data korup diabaikan: $line")
         null
     }
 }
