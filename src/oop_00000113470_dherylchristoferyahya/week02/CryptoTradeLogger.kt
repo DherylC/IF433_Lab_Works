@@ -48,3 +48,18 @@ fun loadTrades(path: String): List<TradeRecord> {
         emptyList()
     }
 }
+
+fun main() {
+    val filePath = "crypto_trades.csv"
+
+    // Mendefinisikan data simulasi riwayat trading (mock data)
+    val mockTrades = listOf(
+        TradeRecord(1, "BTCUSDT", "Long", 150.0, 45.25),
+        TradeRecord(2, "ETHUSDT", "Short", 200.0, -12.80),
+        TradeRecord(3, "XRPUSDT", "Long", 50.0, 8.10)
+    )
+
+    println("Menyimpan data simulasi ke $filePath...")
+    saveTrades(mockTrades, filePath)
+    println("Data berhasil disimpan.")
+}
